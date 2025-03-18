@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Layer Cakes - Boutique en Ligne</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background: #f2f1f0;
+      color: #4a4a4a;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #333;
+      color: white;
+      padding: 15px 0;
+      z-index: 1000;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    nav ul li {
+      margin: 0 20px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.2em;
+      text-transform: uppercase;
+      font-weight: 600;
+      letter-spacing: 1px;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #d4a373;
+    }
+
+  
+    .hero {
+      background: url('IMG_5815.jpg ') no-repeat center center/cover;
+      height: 500px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+      font-size: 3.5em;
+      font-weight: bold;
+      position: relative;
+    }
+
+    .typewriter {
+      overflow: hidden;
+      border-right: 0.15em solid white;
+      white-space: nowrap;
+      margin: 0 auto;
+      letter-spacing: 0.15em;
+      animation: typing 3.5s steps(30, end), blink 0.75s step-end infinite;
+    }
+
+    @keyframes typing {
+      from {
+        width: 0;
+      }
+      to {
+        width: 100%;
+      }
+    }
+
+    @keyframes blink {
+      from, to {
+        border-color: transparent;
+      }
+      50% {
+        border-color: white;
+      }
+    }
+
+    .container {
+      padding: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); /* Plus de largeur pour les images */
+      gap: 300px;
+    }
+
+    .product {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 15%;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s, filter 0.3s;
+    }
+
+    .product:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      filter: brightness(1.05);
+    }
+
+    .product img {
+      width: 100%;
+      height: 800px; /* Augmenter la hauteur */
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
+
+    .product:hover img {
+      transform: scale(1.05);
+    }
+
+    .product-details {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .product-title {
+      font-size: 0.5.8em;
+      margin: 10px 0;
+      color: #333;
+      font-weight: 600;
+    }
+
+    .product-price {
+      color: #d4a373;
+      font-size: 1.3em;
+      margin: 10px 0;
+      font-weight: 500;
+    }
+
+    .buy-button {
+      background: #d4a373;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      font-size: 1.1em;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    .buy-button:hover {
+      background: #b5835a;
+      transform: scale(1.05);
+    }
+
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 20px 30px;
+      font-size: 1em;
+      margin-top: 40px;
+      letter-spacing: 1px;
+    }
+
+    section {
+      margin-top: 80px;
+    }
+
+    .prestations, .gallery {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      padding: 40px 0;
+    }
+
+    .prestations div, .gallery div {
+      background: white;
+      padding: 0px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 30%;
+      text-align: center;
+    }
+
+    .gallery video {
+      width: 100%;
+      height: 300px; /* Augmenter la hauteur des vidéos */
+      object-fit: cover;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="#home">Accueil</a></li>
+     
+      
+    </ul>
+  </nav>
+
+  <header id="home">Layer Cakes - Boutique en Ligne</header>
+
+  <div class="hero">
+    <span class="typewriter">Découvrez nos délicieux Layer Cakes</span>
+  </div>
+
+  <div class="container">
+    <h2 style="text-align: center; margin-bottom: 40px; font-size: 2.2em;">Nos Produits</h2>
+    <div class="products">
+      <!-- Les produits seront chargés dynamiquement ici -->
+    </div>
+  </div>
+
+ 
+
+  <footer>
+    &copy; 2024 Layer Cakes Boutique. Tous droits réservés.
+  </footer>
+
+  <script>
+    const products = [
+      {
+        title: "Layer Cake Chocolat",
+        price: 25,
+        image: "IMG_5815.jpg",
+      },
+      {
+        title: "Layer Cake Vanille",
+        price: 22,
+        image: "DSCF2610-scaled.jpg",
+      },
+      {
+        title: "Layer Cake Fraise",
+        price: 24,
+        image: "flower-cake-2024022011503616-343.webp",
+      },
+      {
+        title: "Layer Cake Citron",
+        price: 23,
+        image: "layer-cake-anniversaire-arc-en-ciel-fille-gateau-fete-dessert-jour-papillon-fleur.jpg",
+      },
+      {
+        title: "Layer Cake Citron",
+        price: 23,
+        image: "WhatsApp-Image-2021-07-05-at-23.11.41.jpeg",
+      },
+      {
+        title: "Layer Cake Citron",
+        price: 23,
+        image: "IMG_2811-768x1024.jpg",
+      },
+      {
+        title: "Layer Cake Citron",
+        price: 23,
+        image: "IMG_20191127_171139_449.jpg",
+      },{
+        title: "Layer Cake Citron",
+        price: 23,
+        image: "DSC_0063-2-scaled.jpg",
+      },
+    ];
+
+    const productsContainer = document.querySelector('.products');
+
+    function renderProducts() {
+      products.forEach(product => {
+        const productElement = document.createElement('div');
+        productElement.classList.add('product');
+
+        productElement.innerHTML = `
+          <img src="${product.image}" alt="${product.title}">
+          <div class="product-details">
+            <h3 class="product-title">${product.title}</h3>
+            <p class="product-price">${product.price}€</p>
+            <button class="buy-button" onclick="addToCart('${product.title}')">Acheter</button>
+          </div>
+        `;
+
+        productsContainer.appendChild(productElement);
+      });
+    }
+
+    function addToCart(productName) {
+      alert(`Vous avez ajouté "${productName}" à votre panier !`);
+    }
+
+    // Charger les produits au démarrage
+    document.addEventListener('DOMContentLoaded', renderProducts);
+  </script>
+</body>
+</html>
